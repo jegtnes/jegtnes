@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'capistrano', '~> 2.15.5'
+gem 'capistrano-node-deploy', '~> 1.2.14'
+gem 'capistrano-shared_file', '~> 0.1.3'
+gem 'capistrano-rbenv', '~> 1.0.5'
