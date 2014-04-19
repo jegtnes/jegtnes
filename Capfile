@@ -37,7 +37,6 @@ end
 namespace :node do
   desc 'Check required packages and install if packages are not installed'
   task :after_completion_install_packages do
-    run 'mkdir -p #{previous_release}/node_modules ; cp -r #{previous_release}/node_modules #{release_path}' if previous_release
     run 'cd #{current_path} && PATH=#{nvm_path}:$PATH #{npm_binary} install --loglevel warn'
   end
 end
