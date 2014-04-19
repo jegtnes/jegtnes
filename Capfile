@@ -6,8 +6,6 @@ set :application, 'jegtnes.co.uk'
 set :user, 'ajms'
 set :deploy_to, '/home/ajms/webapps/aj_ghost/ghost'
 
-set :app_command, 'index'
-
 set :use_sudo, false
 set :scm, :git
 set :repository,  'git@github.com:jegtnes/jegtnes.git'
@@ -28,14 +26,5 @@ namespace :deploy do
   end
 end
 
-namespace :node do
-  desc 'Check required packages and install if packages are not installed'
-  task :install_packages do
-    run 'mkdir -p #{previous_release}/node_modules ; cp -r #{previous_release}/node_modules #{release_path}' if previous_release
-    run 'cd #{release_path} && PATH=#{nvm_path}:$PATH #{npm_binary} install --loglevel warn'
-  end
-end
-
 after 'deploy:create_symlink', 'deploy:mkdir_shared'
-after 'node:restart', 'deploy:generate_sitemap'
 after 'deploy:generate_sitemap', 'deploy:cleanup'
