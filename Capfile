@@ -20,6 +20,7 @@ server 'jegtnes.co.uk', :web, :app, :db, primary: true
 
 set :shared_files,    ['config.js']
 set :shared_children, ['content/data', 'content/images']
+set :npm_binary, '/home/ajms/webapps/aj_ghost/bin/npm'
 
 set :keep_releases, 3
 
