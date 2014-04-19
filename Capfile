@@ -36,12 +36,13 @@ end
 
 namespace :node do
   desc 'Check required packages and install if packages are not installed'
-  task :install_packages do
+  task :after_completion_install_packages do
     run 'mkdir -p #{previous_release}/node_modules ; cp -r #{previous_release}/node_modules #{release_path}' if previous_release
-    run 'cd #{release_path} && PATH=#{nvm_path}:$PATH #{npm_binary} install --loglevel warn'
+    run 'cd #{current_path} && PATH=#{nvm_path}:$PATH #{npm_binary} install --loglevel warn'
   end
 end
 
 after 'deploy:create_symlink', 'deploy:mkdir_shared'
+after 'node:restart', 'node:after_completion_install_packages'
 after 'node:restart', 'deploy:generate_sitemap'
 after 'deploy:generate_sitemap', 'deploy:cleanup'
