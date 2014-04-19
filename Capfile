@@ -1,4 +1,3 @@
-require 'capistrano/node-deploy'
 require 'capistrano/shared_file'
 require 'capistrano-rbenv'
 set :rbenv_ruby_version, '2.1.0'
