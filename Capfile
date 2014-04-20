@@ -5,7 +5,7 @@ set :rbenv_ruby_version, '2.1.0'
 
 set :application, 'jegtnes.co.uk'
 set :user, 'ajms'
-set :deploy_to, '/home/ajms/webapps/aj_ghost/ghost'
+set :deploy_to, '/home/ajms/webapps/aj_blogport/ghost'
 
 set :app_command, 'index'
 
@@ -20,7 +20,8 @@ server 'jegtnes.co.uk', :web, :app, :db, primary: true
 
 set :shared_files,    ['config.js']
 set :shared_children, ['content/data', 'content/images']
-set :npm_binary, '/home/ajms/webapps/aj_ghost/bin/npm'
+set :npm_binary, '/home/ajms/.nvm/v0.10.26/bin/npm'
+set :node_binary, '/home/ajms/.nvm/v0.10.26/bin/node'
 
 set :keep_releases, 3
 
