@@ -29,7 +29,9 @@ set :keep_releases, 3
 
 namespace :deploy do
   task :mkdir_shared do
-    run 'cd #{shared_file_dir} && mkdir -p data images files'
+    run 'mkdir #{shared_file_dir}/data'
+    run 'mkdir #{shared_file_dir}/images'
+    run 'mkdir #{shared_file_dir}/files'
   end
 
   task :generate_sitemap do
