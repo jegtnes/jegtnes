@@ -20,6 +20,7 @@ server 'jegtnes.co.uk', :web, :app, :db, primary: true
 
 set :shared_files,    ['config.js']
 set :shared_children, ['content/data', 'content/images']
+set :shared_path, "#{deploy_to}/shared"
 
 set :npm_binary, '/home/ajms/.nvm/v0.10.26/bin/npm'
 set :node_binary, '/home/ajms/.nvm/v0.10.26/bin/node'
@@ -28,9 +29,9 @@ set :keep_releases, 3
 
 namespace :deploy do
   task :mkdir_shared do
-    run "mkdir #{deploy_to}/#{shared_file_dir}/data"
-    run "mkdir #{deploy_to}/#{shared_file_dir}/images"
-    run "mkdir #{deploy_to}/#{shared_file_dir}/files"
+    run "mkdir #{shared_path}/data"
+    run "mkdir #{shared_path}/images"
+    run "mkdir #{shared_path}/files"
   end
 
   task :generate_sitemap do
