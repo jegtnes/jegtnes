@@ -46,7 +46,6 @@ namespace :node do
   end
 end
 
-after 'deploy:create_symlink', 'deploy:mkdir_shared'
 after 'node:restart', 'node:after_completion_install_packages'
 after 'node:restart', 'deploy:generate_sitemap'
 after 'deploy:generate_sitemap', 'deploy:cleanup'
