@@ -20,7 +20,7 @@ server 'jegtnes.co.uk', :web, :app, :db, primary: true
 
 set :shared_files,    ['config.js']
 set :shared_children, ['content/data', 'content/images']
-set :shared_file_dir, ''
+set :shared_file_dir, '/shared'
 
 set :npm_binary, '/home/ajms/.nvm/v0.10.26/bin/npm'
 set :node_binary, '/home/ajms/.nvm/v0.10.26/bin/node'
