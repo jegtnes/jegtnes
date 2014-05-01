@@ -1,0 +1,3 @@
+[submodule "content/themes/jegtnes-theme"]
+	path = content/themes/jegtnes-theme
+	url = git@github.com:jegtnes/jegtnes-theme.git
