@@ -3,7 +3,7 @@
 // When run from command line.
 
 var ghost = require('./core'),
-    hbs_helpers = require('./handlebars_helpers');
+    hbs_helpers = require('./handlebarsHelpers'),
     errors = require('./core/server/errorHandling');
 
 ghost().otherwise(function (err) {
